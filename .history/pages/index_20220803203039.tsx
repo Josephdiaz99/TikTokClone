@@ -9,6 +9,7 @@ interface IProps{
 
 
 const Home=  ({videos}:IProps) => {
+  console.log(videos)
   return (
  <div className='flex flex-col gap-10 videos h-full' >
   {videos.length ? (
@@ -42,7 +43,7 @@ export const getServerSideProps=async({
 
   return{
     props:{
-      videos:response.data
+      videos:data
   }
   }
 

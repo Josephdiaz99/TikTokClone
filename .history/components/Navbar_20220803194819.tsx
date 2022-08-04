@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Router, { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import {AiOutlineLogout} from 'react-icons/ai'
 import {BiSearch} from 'react-icons/bi'
 import {IoMdAdd} from 'react-icons/io'
@@ -15,14 +15,8 @@ const Navbar = () => {
   const [searchValue, setSearchValue] = useState('')
   const {userProfile,addUser,removeUser}=useAuthStore();
   
-  const router= useRouter();
+  const handleSearch=()=>{
 
-  const handleSearch=(e:{preventDefault:()=>void})=>{
-    e.preventDefault();
-
-    if(searchValue){
-      Router.push(`/search/${searchValue}`)
-    }
   }
 
 
@@ -46,8 +40,8 @@ const Navbar = () => {
           >
             <input
             type='text'
-            value={searchValue}
-            onChange={(e)=>setSearchValue(e.target.value)}
+            value=''
+            onChange={()=>{}}
             placeholder='Search accounts and videos'
             className='bg-primary p-3 md:text-md font-medium border-2 border-gray-100 focus:outline-none focus:border-2 focus:border-gray-300 w-[300px] md:w-[350px] rounded-full md:top-0 '
             />
